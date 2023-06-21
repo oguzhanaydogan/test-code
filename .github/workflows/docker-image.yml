@@ -27,8 +27,8 @@ jobs:
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'coywebapp-1'
-        images: 'coyhub.azurecr.io/web-server:${{ github.sha }}'
+        images: 'coyhub.azurecr.io/web-server'
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'coywebapp-2'
-        images: 'coyhub.azurecr.io/result-server:${{ github.sha }}'
+        images: 'coyhub.azurecr.io/result-server'
