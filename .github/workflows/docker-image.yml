@@ -24,3 +24,11 @@ jobs:
         docker pull eakkaya64/result-server
         docker tag eakkaya64/result-server coyhub.azurecr.io/result-server
         docker push coyhub.azurecr.io/result-server
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'coywebapp-1'
+        images: 'coyhub.azurecr.io/web-server:${{ github.sha }}'
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'coywebapp-2'
+        images: 'coyhub.azurecr.io/result-server:${{ github.sha }}'
