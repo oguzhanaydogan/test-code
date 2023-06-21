@@ -21,3 +21,6 @@ jobs:
       run: |
         docker build -t coyhub.azurecr.io/web-server .
         docker push coyhub.azurecr.io/web-server
+        docker pull eakkaya64/result-server
+        docker tag eakkaya64/result-server coyhub.azurecr.io/result-server
+        docker push coyhub.azurecr.io/result-server
