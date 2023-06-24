@@ -19,11 +19,11 @@ jobs:
     - name: Build the Docker image
       working-directory: ${{ env.working-directory }}
       run: |
-        docker build -t coyhub.azurecr.io/web-server .
-        docker push coyhub.azurecr.io/web-server
-        docker pull eakkaya64/result-server
-        docker tag eakkaya64/result-server coyhub.azurecr.io/result-server
-        docker push coyhub.azurecr.io/result-server
+        sudo docker build -t coyhub.azurecr.io/web-server .
+        sudo docker push coyhub.azurecr.io/web-server
+        sudo docker pull eakkaya64/result-server
+        sudo docker tag eakkaya64/result-server coyhub.azurecr.io/result-server
+        sudo docker push coyhub.azurecr.io/result-server
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'coywebapp-1'
